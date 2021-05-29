@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register_Activity"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eres nuevo"
+            android:gravity="center"
+            android:textColor="#27FF6122"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:layout_marginTop="8dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Solo te tomara 3 minutos!"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginTop="4dp"
+            />
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+
+            android:hint="Ingresa tu email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="14sp"
+
+            />
+        <EditText
+            android:id="@+id/register_nombre"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+            android:hint="Ingresa tu nombre y apellido"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="14sp"
+            />
+        <EditText
+            android:id="@+id/registar_rut"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+            android:hint="Ingresa tu rut"
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="14sp"
+            android:inputType="number"
+            />
+        <EditText
+            android:id="@+id/register_contraseña"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+            android:hint="Ingresa tu Contraseña"
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="14sp"
+            android:inputType="numberPassword"
+            />
+
+        <Button
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:onClick="CreateAccount"
+            android:text="Continuar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes una cuenta? Inicia Sesion Aqui"
+            android:gravity="center"
+            android:textColor="#03A9F4"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:onClick="Launchloggin"
+            />
+    </LinearLayout>
+
+</LinearLayout>
