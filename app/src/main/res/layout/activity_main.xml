@@ -49,24 +49,26 @@
             android:id="@+id/ir_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/btn_redondeado_white"
             android:elevation="5dp"
             android:text="Iniciar sesion"
             android:textColor="@color/black"
+
             android:textSize="16dp" />
 
         <Button
             android:id="@+id/iniciar_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/btn_redondeado_white"
             android:elevation="5dp"
+
             android:text="iniciar con Google"
             android:textColor="@color/black"
             android:textSize="16dp" />
