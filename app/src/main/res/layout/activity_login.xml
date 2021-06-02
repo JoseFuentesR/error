@@ -43,7 +43,9 @@
             android:layout_gravity="center"
             android:paddingRight="25dp"
             android:ems="10"
-
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:textColorHint="#fff"
             android:hint="Ingresa tu email"
             android:inputType="textEmailAddress"
             android:paddingStart="12px"
@@ -75,6 +77,9 @@
             android:selectAllOnFocus="false"
             android:singleLine="false"
             android:textSize="14sp"
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:textColorHint="#fff"
             />
 
         <CheckBox
