@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DenunciaFragment">
+    tools:context=".DenunciaFragment"
+    android:background="@drawable/bg_color"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,30 +45,37 @@
             android:id="@+id/fragment_denuncia_titulo"
             android:layout_width="310dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:paddingRight="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input"
             android:ems="10"
             android:hint="Titulo de la denuncia"
             android:inputType="textEmailAddress"
             android:paddingStart="12px"
+            android:textColorHint="#fff"
             android:paddingEnd="12px"
+            android:paddingRight="25dp"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-            android:textSize="19sp"
-            />
+            android:textAlignment="center"
+            android:textSize="19sp" />
+
         <EditText
-            android:id="@+id/fragment_denunciar_direccion"
+            android:id="@+id/fragment_denuncia_direccion"
             android:layout_width="310dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:paddingRight="25dp"
             android:ems="10"
-            android:hint="Direccion del suceso"
+            android:hint="Direccion de la denuncia"
             android:inputType="textEmailAddress"
+
             android:paddingStart="12px"
             android:paddingEnd="12px"
+            android:textColorHint="#fff"
+            android:background="@drawable/input"
+            android:textAlignment="center"
             android:selectAllOnFocus="false"
             android:singleLine="false"
             android:textSize="19sp"
@@ -75,7 +84,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
-
+            android:background="@drawable/btn_redondeado_white"
             android:layout_marginTop="20dp"
             android:layout_marginRight="45dp"
             android:layout_marginLeft="45dp"
@@ -89,7 +98,7 @@
             android:id="@+id/fragment_denunciar_boton"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-
+            android:background="@drawable/btn_redondeado_white"
             android:layout_marginTop="20dp"
             android:layout_marginRight="45dp"
             android:layout_marginLeft="45dp"
