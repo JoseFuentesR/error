@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:text="Eres nuevo"
             android:gravity="center"
-            android:textColor="#81EC36"
             android:textStyle="bold"
             android:textSize="40dp"
             android:layout_marginTop="8dp"
@@ -33,7 +32,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Solo te tomara 3 minutos!"
+            android:text="Solo te tomara 2 minutos!"
             android:gravity="center"
             android:textSize="15dp"
             android:layout_marginTop="4dp"
@@ -107,10 +106,10 @@
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-            android:background="@drawable/input"
+            android:inputType="textEmailAddress"
             android:textAlignment="center"
             android:textColorHint="#fff"
-            android:inputType="numberPassword"
+            android:textSize="14sp" 
             />
 
         <Button
@@ -122,7 +121,7 @@
             android:textColor="#000000"
             android:background="@drawable/btn_redondeado_white"
             android:onClick="CreateAccount"
-            android:text="Continuar" />
+            android:text="Registrar" />
 
         <TextView
             android:layout_width="match_parent"
@@ -131,7 +130,7 @@
             android:gravity="center"
             android:textColor="#03A9F4"
             android:textStyle="bold"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:onClick="Launchloggin"
             />
     </LinearLayout>

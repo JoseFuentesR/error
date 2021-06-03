@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "860009608697",
+    "firebase_url": "https://denunciasciudadanas-8bd5e-default-rtdb.firebaseio.com",
+    "project_id": "denunciasciudadanas-8bd5e",
+    "storage_bucket": "denunciasciudadanas-8bd5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860009608697:android:406aaf0218be70bc257928",
+        "android_client_info": {
+          "package_name": "com.example.denuncia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860009608697-7at734ud08nti22j6akgbtabflvnbvuu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwduEnPsyitYB5KC0C2lLEWUQ0g3zG9fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860009608697-7at734ud08nti22j6akgbtabflvnbvuu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
