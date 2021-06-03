@@ -27,9 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="25dp"
+            android:textSize="28dp"
             android:gravity="center"
-            android:text="TALCA TE PROTEGE"
+            android:text="CUIDEMOS TALCA"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             />
@@ -39,8 +39,18 @@
             android:layout_marginTop="20dp"
             android:textSize="25dp"
             android:gravity="center"
-            android:text="Juntos Protejamos
-                   nuestra ciudad"
+            android:text="Juntos Cuidemos"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:text="Nuestra Ciudad"
+            android:textStyle="bold"
             android:textColor="#FFFFFF"
             />
 
@@ -79,6 +89,7 @@
             android:onClick="registro"
             android:text="¿No tienes cuenta? Registrate Aqui"
             android:textColor="#03A9F4"
+            android:textSize="18dp"
             android:textStyle="bold"
             tools:ignore="OnClick" />
 
