@@ -16,4 +16,9 @@ public class Login_Activity extends AppCompatActivity {
     public void login(View view) {
     }
 
+    public void signIn(View view) {
+    }
+
+    public void login_google(View view) {
+    }
 }
