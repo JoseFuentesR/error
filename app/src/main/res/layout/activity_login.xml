@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -49,6 +48,9 @@
             android:selectAllOnFocus="false"
             android:singleLine="false"
             android:textSize="14sp"
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:textColorHint="#fff"
             />
 
         <TextView
@@ -101,12 +103,12 @@
             android:background="@drawable/btn_redondeado_white"
             android:onClick="signIn"
             android:text="entrar"
-            />
+            tools:ignore="DuplicateIds" />
 
 
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/login_google"
             android:layout_width="277dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
@@ -118,8 +120,9 @@
             android:textAllCaps="false"
             android:textColor="#000000"
             android:background="@drawable/btn_redondeado_white"
-            android:onClick="login_button"
-            android:textSize="15sp" />
+            android:onClick="login_google"
+            android:textSize="15sp"
+            tools:ignore="DuplicateIds" />
 
         <TextView
             android:layout_width="match_parent"

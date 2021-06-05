@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
+    implementation'com.guithub.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.guithub.bumptech.glide:compiler:4.11.0'
+
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-database:20.0.0'

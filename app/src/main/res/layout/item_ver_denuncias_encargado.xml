@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="90dp">
+    
+
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/iconos_perfil"
+        android:layout_centerVertical="true"
+        tools:ignore="InvalidId" />
+
+
+
+    <TextView
+        android:id="@+id/item_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fecha ingreso"
+        android:layout_toRightOf="@+id/item_img"
+
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/item_direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="direccion de la denuncia"
+        android:layout_toRightOf="@+id/item_img"
+        android:layout_below="@+id/item_fecha"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/item_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tipo de denuncia"
+        android:layout_toRightOf="@+id/item_img"
+        android:layout_below="@+id/item_direccion"
+        android:textStyle="bold"
+        />
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_alignParentBottom="true"
+
+        />
+
+</RelativeLayout>

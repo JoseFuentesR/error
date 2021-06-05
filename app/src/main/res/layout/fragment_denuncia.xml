@@ -81,6 +81,47 @@
             android:textSize="19sp"
             />
 
+        <EditText
+            android:id="@+id/fragment_denuncia_tipo"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+            android:hint="tipo de  denuncia"
+            android:inputType="textEmailAddress"
+
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:textColorHint="#fff"
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="19sp"
+            />
+        <EditText
+            android:id="@+id/fragment_denuncia_detalles"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingRight="25dp"
+            android:ems="10"
+            android:hint="Detalles de la denuncia"
+            android:inputType="textEmailAddress"
+
+            android:paddingStart="12px"
+            android:paddingEnd="12px"
+            android:textColorHint="#fff"
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textSize="19sp"
+            />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
