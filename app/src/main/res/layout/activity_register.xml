@@ -26,7 +26,6 @@
             android:textStyle="bold"
             android:textSize="40dp"
             android:layout_marginTop="8dp"
-
             />
 
         <TextView
@@ -54,7 +53,7 @@
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-            android:textSize="sp"
+            android:textSize="10dp"
 
             />
         <EditText
