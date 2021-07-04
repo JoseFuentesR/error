@@ -12,13 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Denuncia">
-        <activity android:name=".model.Denuncia"></activity>
-        <activity android:name=".model.denuncia" />
+        <activity android:name=".Login_Activity"></activity>
+        <activity android:name=".model.Denuncia" />
         <activity android:name=".detalle_denuncia" />
         <activity android:name=".ver_denuncias" />
         <activity android:name=".perfil" />
         <activity android:name=".ver_denuncias_encargado" />
-        <activity android:name=".Login_Activity" />
         <activity android:name=".Register_Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
