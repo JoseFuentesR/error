@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".model.denuncia"
+    tools:context=".model.Denuncia"
     android:background="@drawable/bg_color"
     >
 
@@ -42,7 +42,7 @@
             />
 
         <EditText
-            android:id="@+id/fragment_denuncia_titulo"
+            android:id="@+id/denuncia_titulo"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -61,7 +61,7 @@
             android:textSize="19sp" />
 
         <EditText
-            android:id="@+id/fragment_denuncia_direccion"
+            android:id="@+id/denuncia_direccion"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -82,7 +82,7 @@
             />
 
         <EditText
-            android:id="@+id/fragment_denuncia_tipo"
+            android:id="@+id/denuncia_tipo"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -102,7 +102,7 @@
             android:textSize="19sp"
             />
         <EditText
-            android:id="@+id/fragment_denuncia_detalles"
+            android:id="@+id/denuncia_detalles"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -123,6 +123,7 @@
             />
 
         <Button
+            android:id="@+id/boton_subir"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/btn_redondeado_white"
@@ -136,7 +137,7 @@
             />
 
         <Button
-            android:id="@+id/fragment_denunciar_boton"
+            android:id="@+id/denunciar_boton"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/btn_redondeado_white"
