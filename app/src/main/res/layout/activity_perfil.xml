@@ -21,9 +21,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-    <include layout="@layout/icono_aplicacion"
-        android:id="@+id/iamgen_perfil"
-        />
+    <include layout="@layout/icono_aplicacion" />
 
         <TextView
             android:layout_width="match_parent"
@@ -58,7 +56,6 @@
 
         <Button
 
-            android:id="@+id/ver_denuncias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -72,7 +69,6 @@
             android:textSize="16dp" />
 
         <Button
-            android:id="@+id/crear_denuncias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"

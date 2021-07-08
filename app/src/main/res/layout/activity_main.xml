@@ -56,7 +56,6 @@
 
         <Button
 
-            android:id="@+id/ir_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -70,7 +69,6 @@
             android:textSize="16dp" />
 
         <Button
-            android:id="@+id/iniciar_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"

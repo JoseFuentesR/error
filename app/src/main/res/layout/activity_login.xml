@@ -25,17 +25,7 @@
             android:textSize="28dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Email"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
         <EditText
-            android:id="@+id/login_email"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -43,6 +33,7 @@
             android:ems="10"
             android:hint="Ingresa tu email"
             android:inputType="textEmailAddress"
+            android:layout_marginTop="20dp"
             android:paddingStart="12px"
             android:paddingEnd="12px"
             android:paddingRight="25dp"
@@ -52,17 +43,8 @@
             android:textColorHint="#fff"
             android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Clave"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/login_clave"
             android:layout_width="310dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -74,12 +56,12 @@
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
+            android:layout_marginTop="20dp"
             android:textAlignment="center"
             android:textColorHint="#fff"
             android:textSize="14sp" />
 
         <CheckBox
-            android:id="@+id/opt1"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -89,14 +71,13 @@
 
 
         <Button
-            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="45dp"
             android:background="@drawable/btn_redondeado_white"
-            android:onClick="signIn"
+            android:onClick="login"
             android:text="entrar"
             android:textColor="#000000"
             android:textSize="15sp"
@@ -104,7 +85,6 @@
 
 
         <Button
-            android:id="@+id/login_google"
             android:layout_width="277dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
@@ -125,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:onClick="login"
+            android:onClick="Registro"
             android:text="¿No tienes cuenta? Registrate Aqui"
             android:textColor="#03A9F4"
             android:textStyle="bold" />
