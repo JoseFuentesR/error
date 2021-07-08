@@ -2,7 +2,7 @@ package com.example.denuncia.model;
 
 public class Usuarios {
 
-    private String rut;
+    private int rut;
     private String nombres_apellidos;
     private String correo;
     private String password;
@@ -11,11 +11,11 @@ public class Usuarios {
 
     }
 
-    public String getRut() {
+    public int getRut() {
         return rut;
     }
 
-    public void setRut(String rut) {
+    public void setRut(int rut) {
         this.rut = rut;
     }
 

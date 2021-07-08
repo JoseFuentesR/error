@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 public class Register_Activity extends AppCompatActivity {
 
     EditText txt_rut,txt_nombre_apellido,txt_correo,txt_password;
+
     FirebaseAuth firebaseAuth;
 
     ProgressDialog progressDialog;
@@ -46,18 +47,17 @@ public class Register_Activity extends AppCompatActivity {
     }
 
     public void CreateAccount(View view) {
-
+        String rutString             = txt_rut.getText().toString();
         final String email           = txt_correo.getText().toString();
         final String nombre_apellido = txt_nombre_apellido.getText().toString();
-        final String rut             = txt_rut.getText().toString();
+        final  int rut               = Integer.parseInt(rutString);
         final String pass            = txt_password.getText().toString();
 
         //
 
-        if (email.isEmpty() || nombre_apellido.isEmpty() || rut.isEmpty() || pass.isEmpty()){
+        if (email.isEmpty() || nombre_apellido.isEmpty() || rut !=0 || pass.isEmpty()){
             Toast.makeText(this,"Complete la informacion",Toast.LENGTH_LONG).show();
         }else {
-
             //create account in firebase
             firebaseAuth.createUserWithEmailAndPassword(email,pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
