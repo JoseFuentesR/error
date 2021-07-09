@@ -26,11 +26,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="40dp"
-//<<<<<<< master
             android:layout_marginTop="10dp"
-//=======
-            android:layout_marginTop="70dp"
-//>>>>>>> master
             />
 
         <TextView
@@ -58,12 +54,7 @@
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-//<<<<<<< master
             android:textSize="16dp"
-//=======
-            android:textSize="15dp"
-//>>>>>>> master
-
             />
         <EditText
             android:id="@+id/register_nombre"
@@ -81,6 +72,7 @@
             android:background="@drawable/input"
             android:textAlignment="center"
             android:textColorHint="#fff"
+            android:textSize="16dp"
             />
         <EditText
             android:id="@+id/registar_rut"
@@ -93,6 +85,7 @@
             android:hint="Ingresa tu rut"
             android:paddingStart="12px"
             android:paddingEnd="12px"
+            android:textSize="16dp"
             android:selectAllOnFocus="false"
             android:singleLine="false"
             android:background="@drawable/input"
@@ -107,24 +100,15 @@
             android:layout_gravity="center"
             android:paddingRight="25dp"
             android:ems="10"
-            android:inputType="numberPassword"
             android:hint="Ingresa tu Contraseña"
             android:paddingStart="12px"
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-//<<<<<<< master
-            android:inputType="textEmailAddress"
-            android:background="@drawable/input"
-            android:textAlignment="center"
-            android:textColorHint="#fff"
             android:textSize="16sp"
-//=======
-            android:textSize="14sp"
             android:background="@drawable/input"
             android:textAlignment="center"
             android:textColorHint="#fff"
-//>>>>>>> master
             />
 
         <Button
