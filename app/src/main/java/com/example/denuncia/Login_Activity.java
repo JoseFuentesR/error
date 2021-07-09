@@ -29,11 +29,18 @@ public class Login_Activity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
     }
 
+// master
     public void Registro(View view) {
         Intent intent = new Intent(this,Register_Activity.class);
         startActivity(intent);
         fileList();
 
+//
+    public void login(View view) {
+        Intent  intent = new Intent(this,Register_Activity.class);
+        startActivity(intent);
+        finish();//destroy login
+// master
     }
 
     public void login(View view) {

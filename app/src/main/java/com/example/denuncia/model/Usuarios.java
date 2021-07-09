@@ -1,5 +1,7 @@
 package com.example.denuncia.model;
 
+import java.util.Objects;
+
 public class Usuarios {
 
     private String rut;
@@ -42,4 +44,5 @@ public class Usuarios {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

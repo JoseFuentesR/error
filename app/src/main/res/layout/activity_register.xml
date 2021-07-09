@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,17 +14,23 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:orientation="vertical"
+
         >
 
 
         <TextView
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Eres nuevo"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="40dp"
+//<<<<<<< master
             android:layout_marginTop="10dp"
+//=======
+            android:layout_marginTop="70dp"
+//>>>>>>> master
             />
 
         <TextView
@@ -53,7 +58,11 @@
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
+//<<<<<<< master
             android:textSize="16dp"
+//=======
+            android:textSize="15dp"
+//>>>>>>> master
 
             />
         <EditText
@@ -65,7 +74,6 @@
             android:paddingRight="25dp"
             android:ems="10"
             android:hint="Ingresa tu nombre y apellido"
-            android:inputType="textEmailAddress"
             android:paddingStart="12px"
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
@@ -90,7 +98,6 @@
             android:background="@drawable/input"
             android:textAlignment="center"
             android:textColorHint="#fff"
-            android:inputType="number"
             />
         <EditText
             android:id="@+id/register_contraseña"
@@ -100,16 +107,24 @@
             android:layout_gravity="center"
             android:paddingRight="25dp"
             android:ems="10"
+            android:inputType="numberPassword"
             android:hint="Ingresa tu Contraseña"
             android:paddingStart="12px"
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
             android:singleLine="false"
+//<<<<<<< master
             android:inputType="textEmailAddress"
             android:background="@drawable/input"
             android:textAlignment="center"
             android:textColorHint="#fff"
             android:textSize="16sp"
+//=======
+            android:textSize="14sp"
+            android:background="@drawable/input"
+            android:textAlignment="center"
+            android:textColorHint="#fff"
+//>>>>>>> master
             />
 
         <Button
