@@ -20,7 +20,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/map_fechadenuncia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -64,7 +63,6 @@
 
         <Button
 
-            android:id="@+id/ver_denuncias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -79,7 +77,6 @@
 
         <Button
 
-            android:id="@+id/estado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Usuarios {
 
-    private int rut;
+    private String rut;
     private String nombres_apellidos;
     private String correo;
     private String password;
@@ -13,11 +13,11 @@ public class Usuarios {
 
     }
 
-    public int getRut() {
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(int rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
 

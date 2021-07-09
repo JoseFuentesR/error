@@ -88,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void login_main(View view) {
+        Intent intent = new Intent(MainActivity.this,Login_Activity.class);
+        startActivity(intent);
+        fileList();//destruye esta actividad
+    }
+
+    public void login_main_google(View view) {
+    }
+
 
     //public void BotonGoogle(View view) {
     //Snackbar.make(view,"replace with your own action",Snackbar.LENGTH_LONG)
