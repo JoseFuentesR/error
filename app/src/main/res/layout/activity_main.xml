@@ -65,7 +65,7 @@
             android:elevation="5dp"
             android:text="Iniciar sesion"
             android:textColor="@color/black"
-
+            android:onClick="login_main"
             android:textSize="16dp" />
 
         <Button
@@ -76,7 +76,7 @@
             android:layout_marginRight="60dp"
             android:background="@drawable/btn_redondeado_white"
             android:elevation="5dp"
-
+            android:onClick="login_main_google"
             android:text="iniciar con Google"
             android:textColor="@color/black"
             android:textSize="16dp" />

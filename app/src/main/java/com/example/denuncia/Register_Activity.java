@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register_Activity extends AppCompatActivity {
 
@@ -25,7 +27,6 @@ public class Register_Activity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
 
-    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,47 +48,58 @@ public class Register_Activity extends AppCompatActivity {
     }
 
     public void CreateAccount(View view) {
-        String rutString             = txt_rut.getText().toString();
+        Usuarios usuarios            = new Usuarios();
         final String email           = txt_correo.getText().toString();
         final String nombre_apellido = txt_nombre_apellido.getText().toString();
-        final  int rut               = Integer.parseInt(rutString);
+        final String rut             = txt_rut.getText().toString();
         final String pass            = txt_password.getText().toString();
 
         //
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef2 = database.getReference("message");
 
-        if (email.isEmpty() || nombre_apellido.isEmpty() || rut !=0 || pass.isEmpty()){
-            Toast.makeText(this,"Complete la informacion",Toast.LENGTH_LONG).show();
-        }else {
+        myRef2.setValue("Hello, World!");
+
+        if (rut != usuarios.getRut()) {
+        if (email.isEmpty() || nombre_apellido.isEmpty() || rut.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Complete la informacion", Toast.LENGTH_LONG).show();
+        } else {
             //create account in firebase
-            firebaseAuth.createUserWithEmailAndPassword(email,pass)
+            firebaseAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        //Usuarios usuarios = new Usuarios();
-                        //usuarios.setRut(rut);
-                        //usuarios.setPassword(pass);
-                        //usuarios.setCorreo(email);
-                        //usuarios.setNombres_apellidos(nombre_apellido);
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference myRef = database.getReference("Usuarios");
 
-                        Toast.makeText(Register_Activity.this,"Cuenta creada",Toast.LENGTH_LONG).show();
-                    }else {
-                        if (task.getException() instanceof FirebaseAuthUserCollisionException){
-                            Toast.makeText(Register_Activity.this,"Verifique la informacion",Toast.LENGTH_LONG).show();
-                        }else{
-                            if (pass.length() < 6){
-                                Toast.makeText(Register_Activity.this,"La contraseña es muy corta minimo 6 de largo",Toast.LENGTH_LONG).show();
-                            }else {
-                                String msg = task.getException().getMessage();
-                                Toast.makeText(Register_Activity.this,msg,Toast.LENGTH_LONG).show();
-                                //Toast.makeText(Register_Activity.this, "Hubo un error inesperado", Toast.LENGTH_LONG).show();
+                                usuarios.setRut(rut);
+                                usuarios.setPassword(pass);
+                                usuarios.setCorreo(email);
+                                usuarios.setNombres_apellidos(nombre_apellido);
+
+                                myRef.push().setValue(usuarios);
+
+                                Toast.makeText(Register_Activity.this, "Cuenta creada", Toast.LENGTH_LONG).show();
+                            } else {
+                                if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                    Toast.makeText(Register_Activity.this, "Verifique la informacion", Toast.LENGTH_LONG).show();
+                                } else {
+                                    if (pass.length() < 6) {
+                                        Toast.makeText(Register_Activity.this, "La contraseña es muy corta minimo 6 de largo", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        String msg = task.getException().getMessage();
+                                        Toast.makeText(Register_Activity.this, msg, Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(Register_Activity.this, "Hubo un error inesperado", Toast.LENGTH_LONG).show();
+                                    }
+                                }
                             }
                         }
-                    }
-                }
-            });
+                    });
         }
-
+        }else {
+            Toast.makeText(Register_Activity.this, "El rut ya esta siendo usado", Toast.LENGTH_LONG).show();
+        }
 
     }
 
