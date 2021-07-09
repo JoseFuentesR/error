@@ -21,6 +21,69 @@ public class Denuncia extends AppCompatActivity {
     private String Denuncia_tipo;
     private Date fecha;
     private String denuncia_detalles;
+    private Usuarios usuarios;
+
+    public Denuncia(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipo_denuncia() {
+        return tipo_denuncia;
+    }
+
+    public void setTipo_denuncia(String tipo_denuncia) {
+        this.tipo_denuncia = tipo_denuncia;
+    }
+
+    public String getEstado_denuncia() {
+        return Estado_denuncia;
+    }
+
+    public void setEstado_denuncia(String estado_denuncia) {
+        Estado_denuncia = estado_denuncia;
+    }
+
+    public String getDenuncia_tipo() {
+        return Denuncia_tipo;
+    }
+
+    public void setDenuncia_tipo(String denuncia_tipo) {
+        Denuncia_tipo = denuncia_tipo;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDenuncia_detalles() {
+        return denuncia_detalles;
+    }
+
+    public void setDenuncia_detalles(String denuncia_detalles) {
+        this.denuncia_detalles = denuncia_detalles;
+    }
+
+    public Usuarios getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
+
+
 
     private Button mUploadbtn;
     private StorageReference mStorage;
