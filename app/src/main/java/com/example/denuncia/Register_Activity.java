@@ -2,18 +2,12 @@ package com.example.denuncia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-// master
 import com.example.denuncia.model.Usuarios;
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,21 +21,10 @@ public class Register_Activity extends AppCompatActivity {
     EditText txt_rut,txt_nombre_apellido,txt_correo,txt_password;
 
     FirebaseAuth firebaseAuth;
-
-//=======
-import com.google.firebase.auth.FirebaseAuth;
-
-public class Register_Activity extends AppCompatActivity {
-
-    EditText txtemail,txtnombre,txtrut,txtpass;
-    FirebaseAuth mAuth;
-//>>>>>>> master
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-// master
 
         txt_rut             = findViewById(R.id.registar_rut);
         txt_nombre_apellido = findViewById(R.id.register_nombre);
@@ -49,31 +32,8 @@ public class Register_Activity extends AppCompatActivity {
         txt_password        = findViewById(R.id.register_contraseña);
 
         firebaseAuth        = FirebaseAuth.getInstance();
-//=======
-
-        txtemail = findViewById(R.id.register_email);
-        txtnombre = findViewById(R.id.register_nombre);
-        txtrut = findViewById(R.id.registar_rut);
-        txtpass = findViewById(R.id.register_contraseña);
-
-        mAuth = FirebaseAuth.getInstance();
     }
 
-    public void CreateAccount(View view) {
-        String email,nombre,rut,pass;
-        email = txtemail.getText().toString();
-        nombre = txtnombre.getText().toString();
-        rut = txtrut.getText().toString();
-        pass = txtpass.getText().toString();
-
-        if (email.isEmpty() || nombre.isEmpty() || rut.isEmpty() || pass.isEmpty()){
-            Toast.makeText(this,"Complete la informacion",Toast.LENGTH_LONG).show();
-        }else{
-
-
-        }
-// master
-    }
 
     public void Launchloggin(View view) {
         Intent  intent = new Intent(this,Login_Activity.class);
@@ -89,10 +49,6 @@ public class Register_Activity extends AppCompatActivity {
         final String pass            = txt_password.getText().toString();
 
         //
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef2 = database.getReference("message");
-
-        myRef2.setValue("Hello, World!");
 
         if (rut != usuarios.getRut()) {
         if (email.isEmpty() || nombre_apellido.isEmpty() || rut.isEmpty() || pass.isEmpty()) {
@@ -104,16 +60,25 @@ public class Register_Activity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                DatabaseReference myRef = database.getReference("Usuarios");
+                                    firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(Register_Activity.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                usuarios.setRut(rut);
-                                usuarios.setPassword(pass);
-                                usuarios.setCorreo(email);
-                                usuarios.setNombres_apellidos(nombre_apellido);
+                                                usuarios.setRut(rut);
+                                                usuarios.setPassword(pass);
+                                                usuarios.setCorreo(email);
+                                                usuarios.setNombres_apellidos(nombre_apellido);
 
-                                myRef.push().setValue(usuarios);
+                                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                                DatabaseReference myRef = database.getReference("Usuarios");
 
+                                                myRef.push().setValue(usuarios);
+                                                //cargar perfil
+                                                Intent intent = new Intent(Register_Activity.this, perfil_Activity.class);
+                                                startActivity(intent);
+                                                finish();
+                                        }
+                                    });
                                 Toast.makeText(Register_Activity.this, "Cuenta creada", Toast.LENGTH_LONG).show();
                             } else {
                                 if (task.getException() instanceof FirebaseAuthUserCollisionException) {
