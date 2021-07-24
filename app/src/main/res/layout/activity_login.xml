@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +22,7 @@
             android:layout_marginTop="60dp"
             android:gravity="center"
             android:text="Inicia Secion"
-            android:textColor="#000000"
+            android:textColor="#E6DFDF"
             android:textSize="28dp"
             android:textStyle="bold" />
 
@@ -42,6 +43,7 @@
             android:singleLine="false"
             android:textAlignment="center"
             android:textColorHint="#fff"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
 
@@ -53,7 +55,6 @@
             android:background="@drawable/input"
             android:ems="10"
             android:hint="Ingresa tu clave"
-            android:inputType="numberPassword"
             android:paddingStart="12px"
             android:paddingEnd="12px"
             android:selectAllOnFocus="false"
@@ -61,46 +62,22 @@
             android:layout_marginTop="20dp"
             android:textAlignment="center"
             android:textColorHint="#fff"
+            android:textColor="@color/white"
             android:textSize="14sp" />
-
-        <CheckBox
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:buttonTint="#000000"
-            android:text="Encargado" />
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="45dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="45dp"
             android:background="@drawable/btn_redondeado_white"
             android:onClick="login"
             android:text="entrar"
             android:textColor="#000000"
-            android:textSize="15sp"
-            tools:ignore="DuplicateIds" />
+            android:textSize="15sp" />
 
-
-        <Button
-            android:layout_width="277dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/btn_redondeado_white"
-            android:onClick="login_google"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
-            android:text="Entrar con Google "
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            tools:ignore="DuplicateIds" />
 
         <TextView
             android:layout_width="match_parent"

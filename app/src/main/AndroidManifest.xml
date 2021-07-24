@@ -4,22 +4,25 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Denuncia Ciudadana"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Denuncia">
-        <activity android:name=".model.Denuncia"/>
-        <activity android:name=".Login_Activity"/>
-
-        <activity android:name=".detalle_denuncia" />
+        <activity android:name=".DetalleActivity"></activity>
+        <activity android:name=".Login_Activity" />
+        <activity android:name=".denuncia_Activity" />
+        <activity android:name=".denuncia_Activity_encargado" />
         <activity android:name=".ver_denuncias" />
-        <activity android:name=".perfil_Activity" />
         <activity android:name=".ver_denuncias_encargado" />
+        <activity android:name=".perfil_Activity" />
+        <activity android:name=".perfil_Activity_encargado" />
         <activity android:name=".Register_Activity" />
+        <activity android:name=".Register_Activity_encargado" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +30,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.denuncia.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

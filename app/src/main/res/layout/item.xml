@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/item_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <ImageView
+        android:id="@+id/img_item"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/nombreDenuncia"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="6dp"
+        android:layout_toRightOf="@id/img_item"
+        android:text="nombre"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/direccionDenuncia"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@id/img_item"
+        android:layout_below="@id/tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="direccion"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@id/img_item"
+        android:layout_below="@id/direccionDenuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="descripcion"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:id="@+id/estadoDenuncia"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/tipo"
+        android:layout_below="@id/nombreDenuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/estadoDenuncia"
+        android:layout_below="@id/nombreDenuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:id="@+id/tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text"
+        android:layout_below="@id/nombreDenuncia"
+        android:text="tipo"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img_item"
+        android:layout_below="@id/nombreDenuncia"
+        android:layout_marginLeft="3dp"
+        android:text="Tipo:"
+        android:textSize="15dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/img_item"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black"
+        />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

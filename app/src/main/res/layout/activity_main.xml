@@ -29,7 +29,7 @@
             android:layout_marginTop="20dp"
             android:textSize="28dp"
             android:gravity="center"
-            android:text="CUIDEMOS TALCA"
+            android:text="Denuncia ciudadana"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             />
@@ -68,18 +68,6 @@
             android:onClick="login_main"
             android:textSize="16dp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="60dp"
-            android:background="@drawable/btn_redondeado_white"
-            android:elevation="5dp"
-            android:onClick="login_main_google"
-            android:text="iniciar con Google"
-            android:textColor="@color/black"
-            android:textSize="16dp" />
 
         <TextView
             android:layout_width="match_parent"

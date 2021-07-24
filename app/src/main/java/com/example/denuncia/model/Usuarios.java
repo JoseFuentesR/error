@@ -1,9 +1,8 @@
 package com.example.denuncia.model;
 
-import java.util.Objects;
-
 public class Usuarios {
 
+    private String uid;
     private String rut;
     private String nombres_apellidos;
     private String correo;
@@ -11,6 +10,14 @@ public class Usuarios {
 
     public Usuarios(){
 
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getRut() {

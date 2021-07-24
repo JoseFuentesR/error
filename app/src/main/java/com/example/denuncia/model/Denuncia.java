@@ -1,38 +1,29 @@
 package com.example.denuncia.model;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import java.text.SimpleDateFormat;
 
-import com.example.denuncia.R;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+public class Denuncia {
 
-import java.util.Date;
-
-public class Denuncia extends AppCompatActivity {
-
-    private int id;
     private String tipo_denuncia;
-    private String Estado_denuncia;
-    private String Denuncia_tipo;
-    private Date fecha;
+    private String titulo_denuncia;
+    private String estado_denuncia;
+    private String fecha;
     private String denuncia_detalles;
-    private Usuarios usuarios;
+    private String direccion;
+    private String url;
 
     public Denuncia(){
 
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Denuncia(String tipo_denuncia, String titulo_denuncia, String estado_denuncia, String fecha, String denuncia_detalles, String direccion, String url) {
+        this.tipo_denuncia = tipo_denuncia;
+        this.titulo_denuncia = titulo_denuncia;
+        this.estado_denuncia = estado_denuncia;
+        this.fecha = fecha;
+        this.denuncia_detalles = denuncia_detalles;
+        this.direccion = direccion;
+        this.url = url;
     }
 
     public String getTipo_denuncia() {
@@ -43,27 +34,27 @@ public class Denuncia extends AppCompatActivity {
         this.tipo_denuncia = tipo_denuncia;
     }
 
+    public String getTitulo_denuncia() {
+        return titulo_denuncia;
+    }
+
+    public void setTitulo_denuncia(String titulo_denuncia) {
+        this.titulo_denuncia = titulo_denuncia;
+    }
+
     public String getEstado_denuncia() {
-        return Estado_denuncia;
+        return estado_denuncia;
     }
 
     public void setEstado_denuncia(String estado_denuncia) {
-        Estado_denuncia = estado_denuncia;
+        this.estado_denuncia = estado_denuncia;
     }
 
-    public String getDenuncia_tipo() {
-        return Denuncia_tipo;
-    }
-
-    public void setDenuncia_tipo(String denuncia_tipo) {
-        Denuncia_tipo = denuncia_tipo;
-    }
-
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -75,42 +66,19 @@ public class Denuncia extends AppCompatActivity {
         this.denuncia_detalles = denuncia_detalles;
     }
 
-    public Usuarios getUsuarios() {
-        return usuarios;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setUsuarios(Usuarios usuarios) {
-        this.usuarios = usuarios;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-
-
-    private Button mUploadbtn;
-    private StorageReference mStorage;
-
-    private static final int GALLERY_INTENT = 1;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_denuncia);
-
-        mStorage = FirebaseStorage.getInstance().getReference();
-
-        mUploadbtn = (Button) findViewById(R.id.boton_subir);
-
-        mUploadbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent  = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-
-                startActivityForResult(intent,GALLERY_INTENT);
-            }
-        });
+    public String getUrl() {
+        return url;
     }
 
-
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }
