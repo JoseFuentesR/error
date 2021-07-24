@@ -1,7 +1,6 @@
 package com.example.denuncia;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class perfil_Activity extends AppCompatActivity {
+public class perfil_Activity_encargado extends Activity {
     TextView txtnombre,txtemail,txtrut;
     FirebaseAuth auth;
     List<Usuarios> list;
@@ -26,7 +25,7 @@ public class perfil_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil);
+        setContentView(R.layout.activity_perfil_encargado);
 
         txtnombre = findViewById(R.id.txtnombre);
         txtrut = findViewById(R.id.txtrut);
@@ -38,8 +37,8 @@ public class perfil_Activity extends AppCompatActivity {
         list = new ArrayList<>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Usuarios");
-        //muesta en el perfil el nombre rut y correo del usuario
+        DatabaseReference myRef = database.getReference("Encargado");
+        //Muestra en el perfil nombre rut y correo del encargado
         myRef.orderByChild("uid").equalTo(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -47,13 +46,13 @@ public class perfil_Activity extends AppCompatActivity {
                     list.clear();
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Usuarios usuarios = ds.getValue(Usuarios.class);
-                            list.add(usuarios);
+                        list.add(usuarios);
 
                     }
                     for (Usuarios u : list) {
-                            txtnombre.setText(u.getNombres_apellidos());
-                            txtemail.setText(u.getCorreo());
-                            txtrut.setText(u.getRut());
+                        txtnombre.setText(u.getNombres_apellidos());
+                        txtemail.setText(u.getCorreo());
+                        txtrut.setText(u.getRut());
                     }
                 }
             }
@@ -65,17 +64,23 @@ public class perfil_Activity extends AppCompatActivity {
 
     }
 
-    //redirige a crear denuncias
+    //redirige a crear denuncia
     public void crear_denuncias(View view) {
-        Intent intent = new Intent(perfil_Activity.this,denuncia_Activity.class);
+        Intent intent = new Intent(perfil_Activity_encargado.this,denuncia_Activity_encargado.class);
         startActivity(intent);
         finish();
 
     }
-    //redirige a ver denuncias
+    //redirige a ver denuncias encargado
     public void verDenuncias(View view) {
-        Intent intent = new Intent(perfil_Activity.this,ver_denuncias.class);
+        Intent intent = new Intent(perfil_Activity_encargado.this,ver_denuncias_encargado.class);
         startActivity(intent);
         finish();
+    }
+    //redirige a crear cuenta de encargado
+    public void Registrar_encargado(View view) {
+        Intent intent = new Intent(this,Register_Activity_encargado.class);
+        startActivity(intent);
+        fileList();//destruye esta actividad
     }
 }

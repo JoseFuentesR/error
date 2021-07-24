@@ -2,7 +2,8 @@ package com.example.denuncia.model;
 
 public class Encargado {
 
-    private int rut;
+    private String uid;
+    private String rut;
     private String nombres_apellidos;
     private String correo;
     private String password;
@@ -11,11 +12,19 @@ public class Encargado {
 
     }
 
-    public int getRut() {
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(int rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
 
