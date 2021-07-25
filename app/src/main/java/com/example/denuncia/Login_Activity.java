@@ -68,6 +68,7 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void login(View view) {
+
         ConnectivityManager connectivityManager =(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         //Verifica conceccion a internet
@@ -93,6 +94,7 @@ public class Login_Activity extends AppCompatActivity {
                                     String uid = auth.getCurrentUser().getUid();
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     DatabaseReference myRef = database.getReference("Encargado");
+
 
                                     //hace la verificacion si la cuenta es de encargado o usuario y redirecciona a su respectivo perfi
                                     myRef.orderByChild("uid").equalTo(uid).addValueEventListener(new ValueEventListener() {

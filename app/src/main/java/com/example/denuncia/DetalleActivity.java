@@ -28,6 +28,8 @@ public class DetalleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle);
         TextView txtnombre,txtdireccion,txtdetalle,txttipo;
 
+
+
         String nombre = getIntent().getStringExtra("NOMBRE");
         String direccion = getIntent().getStringExtra("DIRECCION");
         String detalle = getIntent().getStringExtra("DETALLE");

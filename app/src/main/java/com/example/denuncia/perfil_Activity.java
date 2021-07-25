@@ -27,9 +27,11 @@ public class perfil_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+
         txtnombre = findViewById(R.id.txtnombre);
         txtrut = findViewById(R.id.txtrut);
         txtemail = findViewById(R.id.txtemail);
+
         auth = FirebaseAuth.getInstance();
         String uid =  auth.getCurrentUser().getUid();
         list = new ArrayList<>();

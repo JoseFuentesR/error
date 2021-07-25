@@ -34,6 +34,7 @@ public class Register_Activity_encargado extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_encargado);
         prograsD = new ProgressDialog(this);
+
         txt_rut             = findViewById(R.id.registar_rut);
         txt_nombre_apellido = findViewById(R.id.register_nombre);
         txt_correo          = findViewById(R.id.register_email);
@@ -121,6 +122,7 @@ public class Register_Activity_encargado extends Activity {
         final String nombre_apellido = txt_nombre_apellido.getText().toString();
         final String pass = txt_password.getText().toString();
 
+
         //valida los campos
         if (email.isEmpty() || nombre_apellido.isEmpty() || pass.isEmpty()) {
             Toast.makeText(this, "Complete la informacion", Toast.LENGTH_LONG).show();
@@ -169,5 +171,6 @@ public class Register_Activity_encargado extends Activity {
                         }
                     });
         }
+
     }
 }
