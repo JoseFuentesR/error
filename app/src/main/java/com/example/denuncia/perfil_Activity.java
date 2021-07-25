@@ -27,12 +27,9 @@ public class perfil_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-
         txtnombre = findViewById(R.id.txtnombre);
         txtrut = findViewById(R.id.txtrut);
         txtemail = findViewById(R.id.txtemail);
-
-
         auth = FirebaseAuth.getInstance();
         String uid =  auth.getCurrentUser().getUid();
         list = new ArrayList<>();
@@ -40,6 +37,7 @@ public class perfil_Activity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Usuarios");
         //muesta en el perfil el nombre rut y correo del usuario
+
         myRef.orderByChild("uid").equalTo(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

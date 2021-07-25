@@ -34,7 +34,6 @@ public class Register_Activity_encargado extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_encargado);
         prograsD = new ProgressDialog(this);
-
         txt_rut             = findViewById(R.id.registar_rut);
         txt_nombre_apellido = findViewById(R.id.register_nombre);
         txt_correo          = findViewById(R.id.register_email);
@@ -121,49 +120,54 @@ public class Register_Activity_encargado extends Activity {
         final String email = txt_correo.getText().toString();
         final String nombre_apellido = txt_nombre_apellido.getText().toString();
         final String pass = txt_password.getText().toString();
-        //crea la cuenta del encargado
-        firebaseAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(Register_Activity_encargado.this, task1 -> {
-                            //crea una imagen de carga
-                            prograsD.setTitle("Cargando .....");
-                            prograsD.setMessage("Creando cuenta");
-                            prograsD.setCancelable(false);
-                            prograsD.show();
 
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            String uid = firebaseAuth.getCurrentUser().getUid();
-                            DatabaseReference myRef = database.getReference("Encargado");
+        //valida los campos
+        if (email.isEmpty() || nombre_apellido.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Complete la informacion", Toast.LENGTH_LONG).show();
+        }else{
+            firebaseAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(Register_Activity_encargado.this, task1 -> {
+                                //crea una imagen de carga
+                                prograsD.setTitle("Cargando .....");
+                                prograsD.setMessage("Creando cuenta");
+                                prograsD.setCancelable(false);
+                                prograsD.show();
 
-                            encargado.setUid(uid);
-                            encargado.setRut(rut);
-                            encargado.setPassword(pass);
-                            encargado.setCorreo(email);
-                            encargado.setNombres_apellidos(nombre_apellido);
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                String uid = firebaseAuth.getCurrentUser().getUid();
+                                DatabaseReference myRef = database.getReference("Encargado");
 
-                            myRef.push().setValue(email);
-                            //cargar perfil
-                            prograsD.dismiss();
-                            Intent intent = new Intent(Register_Activity_encargado.this, perfil_Activity_encargado.class);
-                            startActivity(intent);
-                            finish();
-                        });
-                        Toast.makeText(Register_Activity_encargado.this, "Cuenta creada", Toast.LENGTH_LONG).show();
-                    } else {
-                        //se muestran mensajes de error
-                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                            Toast.makeText(Register_Activity_encargado.this, "El correo ya esta en uso", Toast.LENGTH_LONG).show();
+                                encargado.setUid(uid);
+                                encargado.setRut(rut);
+                                encargado.setPassword(pass);
+                                encargado.setCorreo(email);
+                                encargado.setNombres_apellidos(nombre_apellido);
+
+                                myRef.push().setValue(email);
+                                //cargar perfil
+                                prograsD.dismiss();
+                                Intent intent = new Intent(Register_Activity_encargado.this, perfil_Activity_encargado.class);
+                                startActivity(intent);
+                                finish();
+                            });
+                            Toast.makeText(Register_Activity_encargado.this, "Cuenta creada", Toast.LENGTH_LONG).show();
                         } else {
-                            if (pass.length() < 6) {
-                                Toast.makeText(Register_Activity_encargado.this, "La contraseña es muy corta minimo 6 de largo", Toast.LENGTH_LONG).show();
+                            //se muestran mensajes de error
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(Register_Activity_encargado.this, "El correo ya esta en uso", Toast.LENGTH_LONG).show();
                             } else {
-                                String msg = task.getException().getMessage();
-                                Toast.makeText(Register_Activity_encargado.this, msg, Toast.LENGTH_LONG).show();
-                                //Toast.makeText(Register_Activity.this, "Hubo un error inesperado", Toast.LENGTH_LONG).show();
+                                if (pass.length() < 6) {
+                                    Toast.makeText(Register_Activity_encargado.this, "La contraseña es muy corta minimo 6 de largo", Toast.LENGTH_LONG).show();
+                                } else {
+                                    String msg = task.getException().getMessage();
+                                    Toast.makeText(Register_Activity_encargado.this, msg, Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(Register_Activity.this, "Hubo un error inesperado", Toast.LENGTH_LONG).show();
+                                }
                             }
                         }
-                    }
-                });
+                    });
+        }
     }
 }

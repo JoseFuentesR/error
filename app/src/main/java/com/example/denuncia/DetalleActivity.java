@@ -26,7 +26,7 @@ public class DetalleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
-        TextView txtnombre,txtdireccion,txtdetalle,txttipo,txtestado;
+        TextView txtnombre,txtdireccion,txtdetalle,txttipo;
 
         String nombre = getIntent().getStringExtra("NOMBRE");
         String direccion = getIntent().getStringExtra("DIRECCION");

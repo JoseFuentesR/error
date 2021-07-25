@@ -68,11 +68,9 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void login(View view) {
-
         ConnectivityManager connectivityManager =(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         //Verifica conceccion a internet
-
 
         if (networkInfo!=null && networkInfo.isConnectedOrConnecting()) {
             String email = txt_email.getText().toString();
@@ -91,6 +89,7 @@ public class Login_Activity extends AppCompatActivity {
                                     prograsD.setMessage("Ingresando");
                                     prograsD.setCancelable(false);
                                     prograsD.show();
+
                                     String uid = auth.getCurrentUser().getUid();
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     DatabaseReference myRef = database.getReference("Encargado");

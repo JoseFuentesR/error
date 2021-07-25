@@ -79,7 +79,7 @@ public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.Denunc
                     intent.putExtra("DETALLE",txtdetalle.getText().toString());
                     intent.putExtra("ESTADO",txtestado.getText().toString());
                     intent.putExtra("TIPO",txttipo.getText().toString());
-                    //intent.putExtra("IMAGEN",imagen;
+
 
                     activity.startActivity(intent);
                 }

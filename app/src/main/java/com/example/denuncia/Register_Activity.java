@@ -126,6 +126,7 @@ public class Register_Activity extends AppCompatActivity {
     public void CreateAccount(View view) {
         ConnectivityManager connectivityManager =(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
         if (networkInfo!=null && networkInfo.isConnectedOrConnecting()) {
             final String rut = txt_rut.getText().toString().replace(".", "").replace("-", "");
             validarRut(rut);
@@ -139,7 +140,10 @@ public class Register_Activity extends AppCompatActivity {
             final String email = txt_correo.getText().toString();
             final String nombre_apellido = txt_nombre_apellido.getText().toString();
             final String pass = txt_password.getText().toString();
-
+            //valida los campos
+        if (email.isEmpty() || nombre_apellido.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Complete la informacion", Toast.LENGTH_LONG).show();
+        }else{
             firebaseAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
@@ -182,6 +186,7 @@ public class Register_Activity extends AppCompatActivity {
                             }
                         }
                     });
+            }
     }
 
 }

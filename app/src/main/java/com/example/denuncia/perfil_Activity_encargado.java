@@ -47,7 +47,6 @@ public class perfil_Activity_encargado extends Activity {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Usuarios usuarios = ds.getValue(Usuarios.class);
                         list.add(usuarios);
-
                     }
                     for (Usuarios u : list) {
                         txtnombre.setText(u.getNombres_apellidos());

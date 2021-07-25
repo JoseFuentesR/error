@@ -51,7 +51,6 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class denuncia_Activity extends Activity {
-
     String tipo = "", tipodenuncia;
     Spinner txt_tipo;
     EditText txt_detalle, txt_direccion, txt_titulo;
@@ -61,10 +60,8 @@ public class denuncia_Activity extends Activity {
     ImageView img;
     Uri uri_img;
     StorageReference reference;
-
     public static final int CODE_CAMERA = 21;
     public static final int CODE_GALLERY = 22;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +104,6 @@ public class denuncia_Activity extends Activity {
                 reference = fref;
             }
         });
-
-
     }
 
     @Override
@@ -138,7 +133,6 @@ public class denuncia_Activity extends Activity {
         final List<Tipo_denuncia> tipo_denuncias = new ArrayList<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Tipo_denuncia");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
