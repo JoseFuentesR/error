@@ -108,7 +108,6 @@ public class denuncia_Activity extends Activity {
             }
         });
 
-
     }
 
     @Override

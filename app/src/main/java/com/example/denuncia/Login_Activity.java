@@ -73,7 +73,6 @@ public class Login_Activity extends AppCompatActivity {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         //Verifica conceccion a internet
 
-
         if (networkInfo!=null && networkInfo.isConnectedOrConnecting()) {
             String email = txt_email.getText().toString();
             String pass = txt_pass.getText().toString();
@@ -91,9 +90,11 @@ public class Login_Activity extends AppCompatActivity {
                                     prograsD.setMessage("Ingresando");
                                     prograsD.setCancelable(false);
                                     prograsD.show();
+
                                     String uid = auth.getCurrentUser().getUid();
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     DatabaseReference myRef = database.getReference("Encargado");
+
 
                                     //hace la verificacion si la cuenta es de encargado o usuario y redirecciona a su respectivo perfi
                                     myRef.orderByChild("uid").equalTo(uid).addValueEventListener(new ValueEventListener() {
